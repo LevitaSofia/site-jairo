@@ -23,14 +23,13 @@ const navigation = {
     { name: 'Contato', href: '/contato' }
   ],
   categories: [
-    { name: 'Vestidos Longos', href: '/catalogo/vestidos-longos' },
-    { name: 'Vestidos Curtos', href: '/catalogo/vestidos-curtos' },
-    { name: 'Plus Size', href: '/catalogo/plus-size' },
-    { name: 'Debutantes', href: '/catalogo/debutantes' },
-    { name: 'Infantil', href: '/catalogo/infantil' },
-    { name: 'Ternos', href: '/catalogo/ternos' },
-    { name: 'Smokings', href: '/catalogo/smoking' },
-    { name: 'Acessórios', href: '/catalogo/acessorios' }
+    { name: 'Noivas', href: '/catalogo?categoria=noivas' },
+    { name: 'Madrinhas', href: '/catalogo?categoria=madrinhas' },
+    { name: 'Noivos', href: '/catalogo?categoria=noivos' },
+    { name: 'Black Tie', href: '/catalogo?categoria=black-tie' },
+    { name: 'Debutantes', href: '/catalogo?categoria=debutantes' },
+    { name: 'Infantil', href: '/catalogo?categoria=infantil' },
+    { name: 'Acessórios', href: '/catalogo?categoria=acessorios' }
   ],
   legal: [
     { name: 'Políticas', href: '/politicas' },
@@ -53,7 +52,7 @@ const socialMedia = [
   },
   {
     name: 'WhatsApp',
-    href: 'https://wa.me/5516999999999?text=Olá! Vim pelo site e gostaria de saber mais sobre os trajes.',
+    href: 'https://wa.me/5516991952586?text=Olá! Vim pelo site e gostaria de alugar um traje.',
     icon: MessageCircle
   }
 ]
@@ -78,8 +77,8 @@ export function Footer() {
               </Link>
               
               <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                O look perfeito, sem comprar. Há 15 anos oferecendo as melhores opções 
-                em locação de trajes para seus momentos especiais.
+                Trajes inesquecíveis para momentos únicos. Especialistas em locação 
+                de trajes finos com curadoria premium em Ribeirão Preto.
               </p>
 
               {/* Social Media */}
@@ -141,8 +140,8 @@ export function Footer() {
                   <MapPin className="h-5 w-5 text-primary-400 mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="text-sm text-gray-300">
-                      Rua das Flores, 123 - Centro<br />
-                      Ribeirão Preto - SP, 14010-000
+                      Rua São Paulo, 814 - Centro<br />
+                      Ribeirão Preto - SP, 14015-000
                     </p>
                   </div>
                 </li>
@@ -151,10 +150,10 @@ export function Footer() {
                   <Phone className="h-5 w-5 text-primary-400 flex-shrink-0" />
                   <div>
                     <a
-                      href="tel:+551634567890"
+                      href="tel:+551633254734"
                       className="text-sm text-gray-300 hover:text-primary-400 transition-colors"
                     >
-                      (16) 3456-7890
+                      (16) 3325-4734
                     </a>
                   </div>
                 </li>
@@ -163,12 +162,12 @@ export function Footer() {
                   <MessageCircle className="h-5 w-5 text-primary-400 flex-shrink-0" />
                   <div>
                     <a
-                      href="https://wa.me/5516999999999"
+                      href="https://wa.me/5516991952586"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-gray-300 hover:text-primary-400 transition-colors"
                     >
-                      (16) 99999-9999
+                      (16) 99195-2586
                     </a>
                   </div>
                 </li>
@@ -177,10 +176,10 @@ export function Footer() {
                   <Mail className="h-5 w-5 text-primary-400 flex-shrink-0" />
                   <div>
                     <a
-                      href="mailto:contato@espacofesta.com.br"
+                      href="mailto:espacofesta.rp@gmail.com"
                       className="text-sm text-gray-300 hover:text-primary-400 transition-colors"
                     >
-                      contato@espacofesta.com.br
+                      espacofesta.rp@gmail.com
                     </a>
                   </div>
                 </li>
@@ -188,8 +187,8 @@ export function Footer() {
                 <li className="flex items-start gap-3">
                   <Clock className="h-5 w-5 text-primary-400 mt-0.5 flex-shrink-0" />
                   <div className="text-sm text-gray-300">
-                    <p>Seg - Sex: 9h às 18h</p>
-                    <p>Sáb: 9h às 16h</p>
+                    <p>Seg - Sex: 8h30 às 18h</p>
+                    <p>Sáb: 8h às 17h</p>
                     <p>Dom: Fechado</p>
                   </div>
                 </li>
@@ -257,7 +256,7 @@ export function Footer() {
               Pronto para encontrar o look perfeito?
             </p>
             <a
-              href="https://wa.me/5516999999999?text=Olá! Gostaria de agendar uma prova para meu evento."
+              href="https://wa.me/5516991952586?text=Olá! Gostaria de agendar uma prova para meu evento."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-primary-700 transition-colors"

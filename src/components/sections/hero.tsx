@@ -20,50 +20,52 @@ export function Hero() {
           >
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-gray-900 leading-tight mb-6">
-              Alugue o traje{' '}
-              <span className="text-primary-600">ideal</span>{' '}
-              para seu evento
+              Trajes de noiva e festa com{' '}
+              <span className="text-primary-500">curadoria premium</span>{' '}
+              em Ribeirão Preto
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-              Vestidos, ternos e smokings com{' '}
-              <span className="font-semibold text-gray-900">ajustes inclusos</span>{' '}
-              e prova rápida. O look perfeito, sem comprar.
+              <span className="font-semibold text-primary-600">Trajes inesquecíveis para momentos únicos.</span>{' '}
+              Atendimento personalizado, ajustes sob medida e conservação impecável para seu evento especial.
             </p>
 
             {/* Trust Indicators */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mb-8 text-sm">
               <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                <span className="font-medium">Somente locação</span>
+                <span className="font-medium">Curadoria Premium</span>
               </div>
               <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                <span className="font-medium">Ajustes inclusos</span>
+                <span className="font-medium">Ajustes Sob Medida</span>
               </div>
               <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                <span className="font-medium">PP ao XG</span>
+                <span className="font-medium">Atendimento Personalizado</span>
               </div>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link
-                href="https://wa.me/5516999999999?text=Olá! Gostaria de fazer um orçamento para locação de trajes."
+                href="https://wa.me/5516991952586?text=Olá! Gostaria de conhecer os trajes disponíveis para aluguel."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-all duration-200 hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-500 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 transition-all duration-200 hover:scale-105"
               >
-                Orçar no WhatsApp
+                Falar no WhatsApp (1)
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
-                href="/catalogo"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-gray-300 bg-white px-8 py-4 text-base font-semibold text-gray-900 shadow-sm hover:bg-gray-50 hover:border-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600 transition-all duration-200"
+                href="https://wa.me/5516991689938?text=Olá! Gostaria de conhecer os trajes disponíveis para aluguel."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-primary-500 bg-white px-8 py-4 text-base font-semibold text-primary-500 shadow-sm hover:bg-primary-50 hover:border-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 transition-all duration-200"
               >
-                Ver Catálogo
+                Falar no WhatsApp (2)
+                <ArrowRight className="h-5 w-5" />
               </Link>
             </div>
 

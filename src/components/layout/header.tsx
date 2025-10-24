@@ -26,16 +26,16 @@ export function Header() {
           <div className="flex items-center gap-4 text-xs sm:text-sm">
             <div className="flex items-center gap-1">
               <MapPin className="h-3 w-3" />
-              <span>Ribeirão Preto - SP</span>
+              <span>Rua São Paulo, 814 - Ribeirão Preto - SP</span>
             </div>
             <div className="flex items-center gap-1">
               <Clock className="h-3 w-3" />
-              <span>Seg-Sex: 9h às 18h | Sáb: 9h às 16h</span>
+              <span>Segunda a Sábado - Atendimento com agendamento</span>
             </div>
           </div>
           <div className="flex items-center gap-1">
             <Phone className="h-3 w-3" />
-            <span className="font-medium">(16) 3000-0000</span>
+            <span className="font-medium">(16) 3325-4734</span>
           </div>
         </div>
       </div>
@@ -96,12 +96,12 @@ export function Header() {
               Agendar Prova
             </Link>
             <Link
-              href="https://wa.me/5516999999999?text=Olá! Gostaria de saber mais sobre a locação de trajes."
+              href="https://wa.me/5516991952586?text=Olá! Gostaria de conhecer os trajes disponíveis para aluguel."
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-md bg-primary-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-colors"
             >
-              Orçar no WhatsApp
+              Falar no WhatsApp
             </Link>
           </div>
         </nav>
@@ -123,7 +123,7 @@ export function Header() {
                     <h1 className="text-lg font-display font-semibold text-gray-900">
                       Espaço Festa
                     </h1>
-                    <p className="text-xs text-gray-600">Locação de Trajes</p>
+                    <p className="text-xs text-gray-600">Aluguel de Trajes</p>
                   </div>
                 </div>
               </Link>

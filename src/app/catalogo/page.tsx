@@ -10,76 +10,75 @@ import { Filter, Grid3X3, List, Search, MessageCircle, Heart } from 'lucide-reac
 const products = [
   {
     id: 1,
-    name: 'Vestido Longo Azul Royal',
-    category: 'vestidos-longos',
-    image: '👗',
-    color: 'Azul Royal',
+    name: 'Vestido de Noiva Clássico',
+    category: 'noivas',
+    image: '�',
+    color: 'Branco Pérola',
     sizes: ['P', 'M', 'G'],
-    price: 'R$ 180',
-    description: 'Elegante vestido longo em crepe, ideal para madrinhas'
+    fabric: 'Renda francesa',
+    description: 'Elegante vestido de noiva com renda francesa e cauda removível'
   },
   {
     id: 2,
-    name: 'Smoking Clássico Preto',
-    category: 'smoking',
-    image: '🤵',
-    color: 'Preto',
+    name: 'Vestido Madrinha Azul Royal',
+    category: 'madrinhas',
+    image: '👗',
+    color: 'Azul Royal',
     sizes: ['P', 'M', 'G', 'GG'],
-    price: 'R$ 220',
-    description: 'Smoking tradicional com lapela em cetim'
+    fabric: 'Crepe',
+    description: 'Vestido longo em crepe com decote elegante, ideal para madrinhas'
   },
   {
     id: 3,
-    name: 'Vestido Curto Vinho',
-    category: 'vestidos-curtos',
-    image: '👗',
-    color: 'Vinho',
-    sizes: ['PP', 'P', 'M'],
-    price: 'R$ 150',
-    description: 'Vestido midi em crepe georgette'
+    name: 'Smoking Black Tie',
+    category: 'black-tie',
+    image: '🤵',
+    color: 'Preto',
+    sizes: ['P', 'M', 'G', 'GG'],
+    fabric: 'Lã Premium',
+    description: 'Smoking clássico com lapela em cetim para eventos formais'
   },
   {
     id: 4,
-    name: 'Terno Slim Cinza',
-    category: 'ternos',
-    image: '👔',
-    color: 'Cinza',
-    sizes: ['P', 'M', 'G', 'GG'],
-    price: 'R$ 190',
-    description: 'Terno moderno corte slim fit'
+    name: 'Vestido Debutante Rosa',
+    category: 'debutantes',
+    image: '�',
+    color: 'Rosa Antigo',
+    sizes: ['PP', 'P', 'M'],
+    fabric: 'Tule bordado',
+    description: 'Vestido princesa com bordados delicados para festa de 15 anos'
   },
   {
     id: 5,
-    name: 'Vestido Plus Size Marsala',
-    category: 'plus-size',
-    image: '👗',
-    color: 'Marsala',
-    sizes: ['46', '48', '50', '52'],
-    price: 'R$ 200',
-    description: 'Vestido longo com recortes estratégicos'
+    name: 'Terno Noivo Cinza',
+    category: 'noivos',
+    image: '�',
+    color: 'Cinza Chumbo',
+    sizes: ['P', 'M', 'G', 'GG'],
+    fabric: 'Lã Italiana',
+    description: 'Terno slim fit em lã italiana, perfeito para noivos modernos'
   },
   {
     id: 6,
-    name: 'Vestido Infantil Rosa',
+    name: 'Vestido Daminha Branco',
     category: 'infantil',
-    image: '👶',
-    color: 'Rosa',
-    sizes: ['4', '6', '8', '10'],
-    price: 'R$ 120',
-    description: 'Vestido de daminha com saia de tule'
+    image: '�',
+    color: 'Branco',
+    sizes: ['2', '4', '6', '8'],
+    fabric: 'Organza',
+    description: 'Delicado vestido de daminha com laço e saia de organza'
   }
 ]
 
 const categories = [
-  { id: 'todos', name: 'Todos', count: 150 },
-  { id: 'vestidos-longos', name: 'Vestidos Longos', count: 45 },
-  { id: 'vestidos-curtos', name: 'Vestidos Curtos', count: 35 },
-  { id: 'plus-size', name: 'Plus Size', count: 25 },
+  { id: 'todos', name: 'Todos os Trajes', count: 150 },
+  { id: 'noivas', name: 'Noivas', count: 45 },
+  { id: 'madrinhas', name: 'Madrinhas', count: 35 },
+  { id: 'noivos', name: 'Noivos', count: 30 },
+  { id: 'black-tie', name: 'Black Tie', count: 25 },
   { id: 'debutantes', name: 'Debutantes', count: 20 },
   { id: 'infantil', name: 'Infantil', count: 15 },
-  { id: 'ternos', name: 'Ternos', count: 30 },
-  { id: 'smoking', name: 'Smokings', count: 12 },
-  { id: 'acessorios', name: 'Acessórios', count: 25 }
+  { id: 'acessorios', name: 'Acessórios', count: 12 }
 ]
 
 const colors = [
@@ -302,21 +301,21 @@ export default function CatalogPage() {
                         </div>
                       </div>
                       
-                      {/* Price and Actions */}
+                      {/* Fabric and Actions */}
                       <div className={`${viewMode === 'list' ? 'flex items-center justify-between' : ''}`}>
-                        <div className="text-lg font-bold text-primary-600 mb-3">
-                          {product.price}
+                        <div className="text-sm text-primary-600 mb-3 font-medium">
+                          {product.fabric}
                         </div>
                         
                         <div className={`${viewMode === 'list' ? 'flex gap-2' : 'space-y-2'}`}>
                           <a
-                            href={`https://wa.me/5516999999999?text=Olá! Gostaria de saber mais sobre o ${product.name}.`}
+                            href={`https://wa.me/5516991952586?text=Olá! Gostaria de alugar o ${product.name}.`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary-700 transition-colors"
                           >
                             <MessageCircle className="h-4 w-4" />
-                            Reservar
+                            Alugar
                           </a>
                           <button className="inline-flex items-center justify-center gap-2 border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors">
                             <Heart className="h-4 w-4" />
@@ -338,7 +337,7 @@ export default function CatalogPage() {
                   Tente ajustar os filtros ou entre em contato conosco.
                 </p>
                 <a
-                  href="https://wa.me/5516999999999?text=Olá! Não encontrei o que procuro no catálogo online."
+                  href="https://wa.me/5516991952586?text=Olá! Não encontrei o que procuro no catálogo online."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"

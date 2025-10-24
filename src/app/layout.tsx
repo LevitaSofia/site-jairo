@@ -15,22 +15,23 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Espaço Festa - Locação de Trajes | Ribeirão Preto',
-    template: '%s | Espaço Festa - Locação de Trajes'
+    default: 'Espaço Festa – Aluguel de Trajes em Ribeirão Preto | Noivas, Madrinhas e Festas',
+    template: '%s | Espaço Festa – Aluguel de Trajes'
   },
-  description: 'Alugue vestidos, ternos e smokings para seu evento em Ribeirão Preto. Ajustes inclusos, numerações do PP ao XG. Somente locação. O look perfeito, sem comprar.',
+  description: 'Aluguel de vestidos de noiva, trajes de festa e black tie em Ribeirão Preto. Atendimento personalizado, ajustes e curadoria premium. Trajes inesquecíveis para momentos únicos.',
   keywords: [
-    'locação de vestidos',
     'aluguel de trajes',
-    'vestidos de festa',
-    'ternos',
-    'smokings',
-    'Ribeirão Preto',
+    'vestidos de noiva',
+    'aluguel vestido Ribeirão Preto',
+    'trajes de festa',
     'madrinhas',
+    'padrinhos',
     'debutantes',
-    'formatura',
-    'casamento',
-    'plus size'
+    '15 anos',
+    'formaturas',
+    'black tie',
+    'noivas Ribeirão Preto',
+    'trajes inesquecíveis'
   ],
   authors: [{ name: 'Espaço Festa' }],
   creator: 'Espaço Festa',
@@ -39,9 +40,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'pt_BR',
     url: 'https://espacofesta.com.br',
-    siteName: 'Espaço Festa - Locação de Trajes',
-    title: 'Espaço Festa - Locação de Trajes | O look perfeito, sem comprar',
-    description: 'Alugue vestidos, ternos e smokings para seu evento em Ribeirão Preto. Ajustes inclusos, numerações do PP ao XG.',
+    siteName: 'Espaço Festa – Aluguel de Trajes',
+    title: 'Espaço Festa – Aluguel de Trajes | Trajes inesquecíveis para momentos únicos',
+    description: 'Aluguel de vestidos de noiva, trajes de festa e black tie em Ribeirão Preto. Atendimento personalizado, ajustes e curadoria premium.',
     images: [
       {
         url: '/og-image.jpg',
@@ -53,8 +54,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Espaço Festa - Locação de Trajes',
-    description: 'O look perfeito, sem comprar. Locação de vestidos e trajes em Ribeirão Preto.',
+    title: 'Espaço Festa – Aluguel de Trajes',
+    description: 'Trajes inesquecíveis para momentos únicos. Aluguel de vestidos de noiva e trajes em Ribeirão Preto.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -89,56 +90,107 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "Espaço Festa - Locação de Trajes",
-              "description": "Locação de vestidos, ternos e smokings para eventos em Ribeirão Preto",
-              "url": "https://espacofesta.com.br",
-              "telephone": "{{TELEFONE_FIXO}}",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "{{ENDERECO_COMPLETO}}",
-                "addressLocality": "Ribeirão Preto",
-                "addressRegion": "SP",
-                "postalCode": "{{CEP}}",
-                "addressCountry": "BR"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "{{LATITUDE}}",
-                "longitude": "{{LONGITUDE}}"
-              },
-              "openingHours": "{{HORARIO_FUNCIONAMENTO}}",
-              "sameAs": [
-                "https://instagram.com/espacofestarp_",
-                "https://wa.me/{{WHATSAPP}}"
-              ],
-              "serviceArea": {
-                "@type": "City",
-                "name": "Ribeirão Preto"
-              },
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Locação de Trajes",
-                "itemListElement": [
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "Espaço Festa – Aluguel de Trajes",
+                "description": "Aluguel de vestidos de noiva, trajes de festa e black tie em Ribeirão Preto",
+                "url": "https://espacofesta.com.br",
+                "telephone": "+55 16 3325-4734",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Rua São Paulo, 814",
+                  "addressLocality": "Ribeirão Preto",
+                  "addressRegion": "SP",
+                  "addressCountry": "BR"
+                },
+                "areaServed": {
+                  "@type": "City",
+                  "name": "Ribeirão Preto"
+                },
+                "sameAs": [
+                  "https://www.instagram.com/espacofestarp_/"
+                ],
+                "contactPoint": [
                   {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Product",
-                      "name": "Vestidos de Festa"
-                    }
+                    "@type": "ContactPoint",
+                    "telephone": "+55 16 3325-4734",
+                    "contactType": "customer service"
                   },
                   {
-                    "@type": "Offer", 
-                    "itemOffered": {
-                      "@type": "Product",
-                      "name": "Ternos e Smokings"
-                    }
+                    "@type": "ContactPoint", 
+                    "telephone": "+55 16 99195-2586",
+                    "contactType": "customer service",
+                    "availableLanguage": "Portuguese"
+                  },
+                  {
+                    "@type": "ContactPoint",
+                    "telephone": "+55 16 99168-9938", 
+                    "contactType": "customer service",
+                    "availableLanguage": "Portuguese"
                   }
                 ]
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "RentalService",
+                "name": "Espaço Festa – Aluguel de Trajes",
+                "serviceType": "Aluguel de trajes",
+                "description": "Aluguel de vestidos de noiva, madrinhas, trajes masculinos e vestidos de festa para eventos especiais",
+                "provider": {
+                  "@type": "LocalBusiness",
+                  "name": "Espaço Festa – Aluguel de Trajes"
+                },
+                "areaServed": "Ribeirão Preto, SP",
+                "hasOfferCatalog": {
+                  "@type": "OfferCatalog",
+                  "name": "Catálogo de Trajes",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Product",
+                        "name": "Vestidos de Noiva",
+                        "category": "Noivas"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Product", 
+                        "name": "Vestidos de Madrinha",
+                        "category": "Madrinhas"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Product",
+                        "name": "Trajes Masculinos",
+                        "category": "Noivos e Padrinhos"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Product",
+                        "name": "Vestidos de Debutante", 
+                        "category": "15 Anos"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Product",
+                        "name": "Trajes Black Tie",
+                        "category": "Formaturas e Festas"
+                      }
+                    }
+                  ]
+                }
               }
-            })
+            ])
           }}
         />
       </head>
