@@ -20,6 +20,7 @@ const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || "demo-secret",
     }),
   ],
+  debug: true, // Ativar logs de debug
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
