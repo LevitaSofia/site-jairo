@@ -2,7 +2,8 @@
 
 import * as React from 'react'
 import Link from 'next/link'
-import { Menu, X, Phone, MapPin, Clock } from 'lucide-react'
+import { Menu, X, Phone, MapPin, Clock, User, LogIn } from 'lucide-react'
+import { useSession, signOut } from 'next-auth/react'
 import { cn } from '@/lib/utils'
 
 const navigation = [
@@ -17,6 +18,7 @@ const navigation = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
+  const { data: session, status } = useSession()
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
@@ -87,8 +89,8 @@ export function Header() {
             ))}
           </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-3">
+          {/* CTA Buttons & Auth */}
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-3 lg:items-center">
             <Link
               href="/agendar"
               className="text-sm font-semibold leading-6 text-primary-600 hover:text-primary-700 transition-colors"
@@ -103,6 +105,54 @@ export function Header() {
             >
               Falar no WhatsApp
             </Link>
+            
+            {/* Auth Section */}
+            {status === 'loading' ? (
+              <div className="h-8 w-8 animate-pulse bg-gray-200 rounded-full"></div>
+            ) : session ? (
+              <div className="relative group">
+                <button className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors">
+                  <div className="h-8 w-8 bg-primary-100 rounded-full flex items-center justify-center">
+                    {session.user?.image ? (
+                      <img
+                        src={session.user.image}
+                        alt={session.user.name || ''}
+                        className="h-8 w-8 rounded-full object-cover"
+                      />
+                    ) : (
+                      <User className="h-4 w-4 text-primary-600" />
+                    )}
+                  </div>
+                  <span>{session.user?.name?.split(' ')[0]}</span>
+                </button>
+                
+                {/* Dropdown Menu */}
+                <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="py-2">
+                    <Link
+                      href="/minha-conta"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                    >
+                      Minha Conta
+                    </Link>
+                    <button
+                      onClick={() => signOut({ callbackUrl: '/' })}
+                      className="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                    >
+                      Sair
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link
+                href="/auth/login"
+                className="flex items-center gap-1 text-sm font-semibold text-gray-700 hover:text-primary-600 transition-colors"
+              >
+                <LogIn className="h-4 w-4" />
+                Entrar
+              </Link>
+            )}
           </div>
         </nav>
 
@@ -159,7 +209,7 @@ export function Header() {
                     Agendar Prova
                   </Link>
                   <Link
-                    href="https://wa.me/5516999999999?text=Olá! Gostaria de saber mais sobre a locação de trajes."
+                    href="https://wa.me/5516991952586?text=Olá! Gostaria de saber mais sobre a locação de trajes."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block rounded-md bg-primary-600 px-3 py-2.5 text-center text-base font-semibold text-white shadow-sm hover:bg-primary-500 transition-colors"
@@ -167,6 +217,45 @@ export function Header() {
                   >
                     Orçar no WhatsApp
                   </Link>
+                  
+                  {/* Mobile Auth Section */}
+                  {session ? (
+                    <>
+                      <Link
+                        href="/minha-conta"
+                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Minha Conta
+                      </Link>
+                      <button
+                        onClick={() => {
+                          signOut({ callbackUrl: '/' })
+                          setMobileMenuOpen(false)
+                        }}
+                        className="-mx-3 block w-full text-left rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-red-600 hover:bg-gray-50"
+                      >
+                        Sair
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <Link
+                        href="/auth/login"
+                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Entrar
+                      </Link>
+                      <Link
+                        href="/auth/register"
+                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-primary-600 hover:bg-gray-50"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Cadastre-se
+                      </Link>
+                    </>
+                  )}
                 </div>
               </div>
             </div>

@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { WhatsAppButton } from '@/components/ui/whatsapp-button'
 import { Toaster } from '@/components/ui/toaster'
+import { Providers } from '@/components/providers/auth-provider'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
@@ -195,9 +196,11 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
-        {children}
-        <WhatsAppButton />
-        <Toaster />
+        <Providers>
+          {children}
+          <WhatsAppButton />
+          <Toaster />
+        </Providers>
       </body>
     </html>
   )
